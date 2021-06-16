@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Мобильное приложение - Электронное учебное пособие «Создание мобильных приложений на Python или Java»</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="jwplayer/jwplayer.js"></script>
+
+
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="index.html">Электронное учебное пособие «Создание мобильных приложений на Python или Java»</a></h1>
+			<p></p>
+		</div>
+	</div>
+	</div>
+	<!-- end #header -->
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+		<div id="content">
+			<div class="post">
+				<h2 class="title">Создание мобильного прложения на "Java"</h2>
+				<div style="clear: both;">&nbsp;</div>
+				<div class="entry">
+
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>В
+любом деле самое сложное — это начало. Часто бывает тяжело войти в контекст, с
+чем столкнулся и я, решив разработать свое первое Android-приложение. Настоящая
+статья для тех, кто хочет начать, но не знает с чего. </SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222; LINE-HEIGHT: 107%'><SPAN
+style="BACKGROUND: white">Статья затронет весь цикл разработки приложения.
+Вместе мы напишем простенькую игру “Крестики-Нолики” с одним экраном (в ОС
+Android это называется Activity). </SPAN><SPAN
+style="BACKGROUND: white">Отсутствие опыта разработки на языке Java не должно
+стать препятствием в освоении Android. Так, в примерах не будут использоваться
+специфичные для Java конструкции (или они будет минимизированы на столько, на
+сколько это возможно). Если Вы пишете, например, на PHP и знакомы с
+основополагающими принципами в разработке ПО, эта статья будет вам наиболее
+полезна. В свою очередь так как, я не являюсь экспертом по разработке на Java,
+можно предположить, что исходный код не претендует на лейбл “лучшие практики
+разработки на Java”.</SPAN><BR><BR><A name=habracut></A><BR><B>Установка
+необходимых программ и утилит</B></SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; LINE-HEIGHT: 107%'><O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222; LINE-HEIGHT: 107%'><BR><SPAN
+style="BACKGROUND: white">Перечислю необходимые инструменты. Их 3:</SPAN><BR
+style="mso-special-character: line-break"><BR
+style="mso-special-character: line-break"></SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; LINE-HEIGHT: 107%'><O:P></O:P></SPAN></P>
+<P class=MsoNormal
+style="BACKGROUND: white; MARGIN: 0cm 0cm 8pt 25.5pt; LINE-HEIGHT: normal; TEXT-INDENT: -18pt; mso-list: l0 level1 lfo1; tab-stops: list 36.0pt; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222; mso-fareast-font-family: "Times New Roman"'><SPAN
+style="mso-list: Ignore">1.<SPAN
+style='FONT: 7pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</SPAN></SPAN></SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'><A
+href="http://www.oracle.com/technetwork/java/javase/downloads/index.html"><SPAN
+style="COLOR: #548eaa">JDK — набор для разработки на языке
+Java</SPAN></A>;<O:P></O:P></SPAN></P>
+<P class=MsoNormal
+style="BACKGROUND: white; MARGIN: 0cm 0cm 8pt 25.5pt; LINE-HEIGHT: normal; TEXT-INDENT: -18pt; mso-list: l0 level1 lfo1; tab-stops: list 36.0pt; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222; mso-fareast-font-family: "Times New Roman"'><SPAN
+style="mso-list: Ignore">2.<SPAN
+style='FONT: 7pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</SPAN></SPAN></SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'><A
+href="http://dl.google.com/android/installer_r08-windows.exe"><SPAN
+style="COLOR: #548eaa">Android SDK and AVD Manager — набор утилит для разработки
++ эмулятор</SPAN></A>;<O:P></O:P></SPAN></P>
+<P class=MsoNormal
+style="BACKGROUND: white; MARGIN: 0cm 0cm 8pt 25.5pt; LINE-HEIGHT: normal; TEXT-INDENT: -18pt; mso-list: l0 level1 lfo1; tab-stops: list 36.0pt; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222; mso-fareast-font-family: "Times New Roman"'><SPAN
+style="mso-list: Ignore">3.<SPAN
+style='FONT: 7pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</SPAN></SPAN></SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'>IDE
+c поддержкой разработки для Android:<O:P></O:P></SPAN></P>
+<P class=MsoNormal
+style="BACKGROUND: white; MARGIN: 0cm 0cm 8pt 51pt; LINE-HEIGHT: normal; TEXT-INDENT: -18pt; mso-list: l0 level2 lfo1; tab-stops: list 72.0pt; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto"><SPAN
+style="FONT-SIZE: 10pt; FONT-FAMILY: Symbol; COLOR: #222222; mso-fareast-font-family: Symbol; mso-bidi-font-size: 16.0pt; mso-bidi-font-family: Symbol"><SPAN
+style="mso-list: Ignore">·<SPAN
+style='FONT: 7pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</SPAN></SPAN></SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'>Eclipse
++ ADT plugin;<O:P></O:P></SPAN></P>
+<P class=MsoNormal
+style="BACKGROUND: white; MARGIN: 0cm 0cm 8pt 51pt; LINE-HEIGHT: normal; TEXT-INDENT: -18pt; mso-list: l0 level2 lfo1; tab-stops: list 72.0pt; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto"><SPAN
+style="FONT-SIZE: 10pt; FONT-FAMILY: Symbol; COLOR: #222222; mso-fareast-font-family: Symbol; mso-bidi-font-size: 16.0pt; mso-bidi-font-family: Symbol"><SPAN
+style="mso-list: Ignore">·<SPAN
+style='FONT: 7pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</SPAN></SPAN></SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'>IntelliJ
+IDEA Community Edition;<O:P></O:P></SPAN></P>
+<P class=MsoNormal
+style="BACKGROUND: white; MARGIN: 0cm 0cm 8pt 51pt; LINE-HEIGHT: normal; TEXT-INDENT: -18pt; mso-list: l0 level2 lfo1; tab-stops: list 72.0pt; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto"><SPAN
+style="FONT-SIZE: 10pt; FONT-FAMILY: Symbol; COLOR: #222222; mso-fareast-font-family: Symbol; mso-bidi-font-size: 16.0pt; mso-bidi-font-family: Symbol"><SPAN
+style="mso-list: Ignore">·<SPAN
+style='FONT: 7pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</SPAN></SPAN></SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'>Netbeans
++ nbandroid plugin;<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>Утилиты
+устанавливаются в определенном выше порядке. Ставить все перечисленные IDE
+смысла нет (разве только если Вы испытываете затруднения с выбором подходящей).
+Я использую IntelliJ IDEA Community Edition, одну из самых развитых на данный
+момент IDE для Java.</SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222; LINE-HEIGHT: 107%'><BR
+style="mso-special-character: line-break"><BR
+style="mso-special-character: line-break"><O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><FONT face=Calibri><B><SPAN
+style="FONT-SIZE: 16pt; COLOR: #222222; LINE-HEIGHT: 107%">Запуск виртуального
+устройства</SPAN></B><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; LINE-HEIGHT: 107%'><O:P></O:P></SPAN></FONT></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222; LINE-HEIGHT: 107%'><BR><SPAN
+style="BACKGROUND: white">Запустив AVD Manager и установив дополнительные пакеты
+(SDK различных версий), можно приступить к созданию виртуального устройства с
+необходимыми параметрами. Разобраться в интерфейсе не должно составить
+труда.<O:P></O:P></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><O:P><IMG
+class=image style="HEIGHT: 372px; WIDTH: 564px"
+alt=7b36745761349181279384023b80f45f.jpg
+src="user-images/7b36745761349181279384023b80f45f.jpg"
+width=639 height=372></O:P></SPAN></P>
+<H3 style="BACKGROUND: white; MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: 21pt"><B><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'>Список
+устройств</SPAN></B><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'><O:P></O:P></SPAN></H3>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: black; LINE-HEIGHT: 107%'><O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: black; LINE-HEIGHT: 107%'><O:P><IMG
+class=image style="HEIGHT: 372px; WIDTH: 568px"
+alt=5d196f9110b100dbbada263da4cbfec1.jpg
+src="user-images/5d196f9110b100dbbada263da4cbfec1.jpg"
+width=639 height=372></O:P></SPAN></P>
+<P class=MsoNormal
+style="BACKGROUND: white; MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: 24pt; mso-outline-level: 2"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: RU'>Создание
+проекта<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222; LINE-HEIGHT: 107%; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: RU'><IMG
+class=image style="HEIGHT: 552px; WIDTH: 584px"
+alt=06fce2d686b7334718e3974e5b5f7096.jpg
+src="user-images/06fce2d686b7334718e3974e5b5f7096.jpg"
+width=639 height=552></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222; LINE-HEIGHT: 107%; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: RU'><IMG
+class=image style="HEIGHT: 552px; WIDTH: 584px"
+alt=46ff2b7550308e887c13f34eb5eaace4.jpg
+src="user-images/46ff2b7550308e887c13f34eb5eaace4.jpg"
+width=639 height=552></SPAN></P>
+<P><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222; LINE-HEIGHT: 107%; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: RU'><IMG
+class=image style="HEIGHT: 552px; WIDTH: 583px"
+alt=463f94083989c46ed9164bbfbcc2794d.jpg
+src="user-images/463f94083989c46ed9164bbfbcc2794d.jpg"
+width=639 height=552></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><IMG class=image
+style="HEIGHT: 552px; WIDTH: 585px" alt=7964296573ea0a9d16428be89ba45d5a.jpg
+src="user-images/7964296573ea0a9d16428be89ba45d5a.jpg"
+width=640 height=552></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><IMG class=image
+alt=7147276924513ddf062012b7834606f5.jpg
+src="user-images/7147276924513ddf062012b7834606f5.jpg"></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><IMG class=image
+style="HEIGHT: 578px; WIDTH: 565px" alt=cp6.jpg
+src="user-images/cp6.jpg"
+width=669 height=578></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><IMG class=image
+style="HEIGHT: 466px; WIDTH: 561px" alt=213bbacd60c2a85166d5b84c8edf2202.jpg
+src="user-images/213bbacd60c2a85166d5b84c8edf2202.jpg"
+width=639 height=466></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><BR><SPAN
+style="BACKGROUND: white">Мне всегда не терпится приступить к работе,
+минимизируя подготовительные мероприятия, к которым относится создание проекта в
+IDE, особенно, когда проект учебный и на продакшн не
+претендует.</SPAN><BR><BR><SPAN style="BACKGROUND: white">Итак, File-&gt;New
+Project:<O:P></O:P></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: RU'></SPAN>&nbsp;</P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: black; LINE-HEIGHT: 107%'>По
+нажатию кнопки F6 проект соберется, откомпилируется и запустится на виртуальном
+девайсе.<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: black; LINE-HEIGHT: 107%'>Структура
+проекта<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: black; LINE-HEIGHT: 107%'>На
+предыдущем скриншоте видна структура проекта. Так как в этой статье мы
+преследуем сугубо практические цели, заострим внимание лишь на тех папках,
+которые будем использовать в процессе работы. Это следующие каталоги: gen, res и
+src. В папке gen находятся файлы, которые генерируются автоматически при сборке
+проекта. Вручную их менять нельзя.<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: black; LINE-HEIGHT: 107%'>Папка
+res предназначена для хранения ресурсов, таких как картинки, тексты (в том числе
+переводы), значения по-умолчанию, макеты (layouts).<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: black; LINE-HEIGHT: 107%'><O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: black; LINE-HEIGHT: 107%'>src
+— это папка в которой будет происходить основная часть работы, ибо тут хранятся
+файлы с исходными текстами нашей программы.<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: black; LINE-HEIGHT: 107%'>Первые
+строки<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: black; LINE-HEIGHT: 107%'>Как
+только создается Activity (экран приложения), вызывается метод onCreate(). IDE
+заполнила его 2 строчками:<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: black; LINE-HEIGHT: 107%'><IMG
+class=image alt=crenshot_1.png
+src="user-images/crenshot_1.png"></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>Метод
+setContentView (равносильно this.setContentView) устанавливает xml-макет для
+текущего экрана. Далее xml-макеты будем называть «layout», а экраны —
+«Activity». Layout в приложении будет следующий:<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><O:P><IMG
+class=image alt=creenshot_1.png
+src="user-images/creenshot_1.png"></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>Для
+этого приложения идеально подойдет TableLayout. Id можно присвоить любому
+ресурсу. В данном случае, TableLayout присвоен id = main_l. При помощи метода
+findViewById() можно получить доступ к виду:<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><O:P><IMG
+class=image alt=creenshot_2.png
+src="user-images/creenshot_2.png"></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>Теперь
+необходимо реализовать метод buildGameField(). Для этого требуется сгенерировать
+поле в виде матрицы. Этим будет заниматься класс Game. Сначала нужно создать
+класс Square для ячеек и класс Player, объекты которого будут заполнять эти
+ячейки.</SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222; LINE-HEIGHT: 107%'><BR><BR
+style="mso-special-character: line-break"><BR
+style="mso-special-character: line-break"></SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; LINE-HEIGHT: 107%'><O:P></O:P></SPAN></P>
+<H3 style="BACKGROUND: white; MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: 21pt"><B><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'>Square.java</SPAN></B><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'><O:P></O:P></SPAN></H3>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: black; LINE-HEIGHT: 107%'><IMG
+class=image alt=creenshot_3.png
+src="user-images/creenshot_3.png"></SPAN></P>
+<H3 style="BACKGROUND: white; MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: 21pt"><B><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'>Player.java</SPAN></B><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'><O:P></O:P></SPAN></H3>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: black; LINE-HEIGHT: 107%'><IMG
+class=image alt=creenshot_4.png
+src="user-images/creenshot_4.png"></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>Все
+классы нашего приложения находятся в папке src.</SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222; LINE-HEIGHT: 107%'><BR
+style="mso-special-character: line-break"><BR
+style="mso-special-character: line-break"></SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; LINE-HEIGHT: 107%'><O:P></O:P></SPAN></P>
+<H3 style="BACKGROUND: white; MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: 21pt"><B><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'>Game.java</SPAN></B><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'><O:P></O:P></SPAN></H3>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: black; LINE-HEIGHT: 107%'><IMG
+class=image alt=creenshot_5.png
+src="user-images/creenshot_5.png"></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>Инициализация
+Game в конструкторе KrestikinolikiActivity.<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><O:P><IMG
+class=image alt=creenshot_6.png
+src="user-images/creenshot_6.png"></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>Метод
+buildGameField() класса KrestikinolikiActivity. Он динамически добавляет строки
+и колонки в таблицу (игровое поле):<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><O:P><IMG
+class=image alt=creenshot_7.png
+src="user-images/creenshot_7.png"></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>В
+строке 8 создается объект, реализующий интерфейс View.OnClickListener. Создадим
+вложенный класс Listener. Он будет виден только из
+KrestikinolikiActivity.<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><IMG
+class=image alt=creenshot_8.png
+src="user-images/creenshot_8.png"></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>Осталось
+реализовать логику игры.<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><O:P><IMG
+class=image alt=creenshot_9.png
+src="user-images/creenshot_9.png"></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><O:P><IMG
+class=image alt=creenshot_10.png
+src="user-images/creenshot_10.png"></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><O:P><IMG
+class=image alt=creenshot_11.png
+src="user-images/creenshot_11.png"></O:P></SPAN></P>
+<P class=MsoNormal
+style="BACKGROUND: white; MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: 24pt; mso-outline-level: 2"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: RU'>Определение
+победителя<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222; LINE-HEIGHT: 107%; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: RU'><BR><SPAN
+style="BACKGROUND: white">К. О. подсказывает, что в крестики-нолики выирывает
+тот, кто выстроет X или O в линию длиной, равной длине поля по-вертикали, или
+по-горизонтали, или по-диагонали. Первая мысль, которая приходит в голову — это
+написать методы для каждого случая. Думаю, в этом случае хорошо подойдет паттерн
+Chain of Responsobility. Определим интерфейс<O:P></O:P></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: RU'><IMG
+class=image alt=creenshot_12.png
+src="user-images/creenshot_12.png"></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>Так
+как Game наделен обязанностью выявлять победителя, он реализует этот интерфейс.
+Настало время создать виртуальных «лайнсменов», каждый из которых будет
+проверять свою сторону. Все они реализует интерфейс
+WinnerCheckerInterface.</SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222; LINE-HEIGHT: 107%'><BR
+style="mso-special-character: line-break"><BR
+style="mso-special-character: line-break"></SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; LINE-HEIGHT: 107%'><O:P></O:P></SPAN></P>
+<H3 style="BACKGROUND: white; MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: 21pt"><B><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'>WinnerCheckerHorizontal.java</SPAN></B><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'><O:P></O:P></SPAN></H3>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><IMG
+class=image alt=creenshot_13.png
+src="user-images/creenshot_13.png"></SPAN></P>
+<H3 style="BACKGROUND: white; MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: 21pt"><B><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'>WinnerCheckerVertical.java</SPAN></B><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'><O:P></O:P></SPAN></H3>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><IMG
+class=image alt=creenshot_14.png
+src="user-images/creenshot_14.png"></SPAN></P>
+<H3 style="BACKGROUND: white; MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: 21pt"><B><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'>WinnerCheckerDiagonalLeft.java</SPAN></B><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'><O:P></O:P></SPAN></H3>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><IMG
+class=image alt=creenshot_15.png
+src="user-images/creenshot_15.png"></SPAN></P>
+<H3 style="BACKGROUND: white; MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: 21pt"><B><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'>WinnerCheckerDiagonalRight.java</SPAN></B><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #222222'><O:P></O:P></SPAN></H3>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><IMG
+class=image alt=creenshot_16.png
+src="user-images/creenshot_16.png"></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>Проинициализируем
+их в конструкторе Game:<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><IMG
+class=image alt=creenshot_17.png
+src="user-images/creenshot_17.png"></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>Реализация
+checkWinner():<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><IMG
+class=image alt=creenshot_18.png
+src="user-images/creenshot_18.png"></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>Победителя
+проверяем после каждого хода. Добавим кода в метод onClick() класса
+Listener<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><IMG
+class=image alt=creenshot_19.png
+src="user-images/creenshot_19.png"></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>Метод
+gameOver() реализован в 2-х вариантах:<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><IMG
+class=image alt=creenshot_20.png
+src="user-images/creenshot_20.png"></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>Для</SPAN><SPAN
+lang=EN-US
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%; mso-ansi-language: EN-US'>
+Java, gameOver(Player player) </SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>и</SPAN><SPAN
+lang=EN-US
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%; mso-ansi-language: EN-US'>
+gameOver() — </SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>разные</SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%; mso-ansi-language: EN-US'>
+</SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>методы</SPAN><SPAN
+lang=EN-US
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%; mso-ansi-language: EN-US'>.
+</SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>Воспользовавшись
+Builder'ом Toast.makeText, можно быстро создать и показать уведомление.
+refresh() обновляет состояние поля:<O:P></O:P></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'><IMG
+class=image alt=creenshot_21.png
+src="user-images/creenshot_21.png"></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 8pt"><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: #222222; LINE-HEIGHT: 107%'>Видео
+готового приложения </SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: black; LINE-HEIGHT: 107%'><O:P></O:P></SPAN></P><IFRAME
+title="YouTube video player" height=315
+src="https://www.youtube.com/embed/D9UzcjEopYc" frameBorder=0 width=560
+allowfullscreen
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></IFRAME>
+
+				</div>
+			</div>
+		<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+		<div id="sidebar">
+			<ul>
+
+				<li>
+					<h2></h2>
+					<ul>
+						<li><a style="" href="index.html">Мобильное приложение</a></li>
+<li><a style="" href="page3.html">Подсказка для скачивания «Android Studio»</a></li>
+<li><a style="" href="page4.html">Создание мобильного приложения на "Python"</a></li>
+<li><a style="" href="page5.html">Видеоуроки по "kivy python"</a></li>
+<li class="active"><a style="" href="page6.html">Создание мобильного прложения на "Java"</a></li>
+<li><a style="" href="page7.html">Видеоуроки по "Java"</a></li>
+<li><a style="" href="page10.html">Тест на знание "Java"</a></li>
+<li><a style="" href="page11.html">Тест на знание "Python"</a></li>
+
+					</ul>
+				</li>
+
+			</ul>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+	</div>
+	<!-- end #page -->
+</div>
+<div id="footer">
+	<p> | <a href="https://nggtk.ru">Сайт ГАПОУ НГТК</a> | <a href="https://vk.com/gapou_ngtk">НГТК в Вк</a></p>
+<p><a href="#top"> Наверх </a> </p>
+</div>
+
+</body>
+</html>

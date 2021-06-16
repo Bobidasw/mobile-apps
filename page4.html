@@ -1,0 +1,987 @@
+<!DOCTYPE html PUBLIC>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Мобильное приложение - Электронное учебное пособие «Создание мобильных приложений на Python или Java»</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="jwplayer/jwplayer.js"></script>
+
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="index.html">Электронное учебное пособие «Создание мобильных приложений на Python или Java»</a></h1>
+			<p></p>
+		</div>
+	</div>
+	</div>
+	<!-- end #header -->
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+		<div id="content">
+			<div class="post">
+				<h2 class="title">Создание мобильного приложения на "Python"</h2>
+				<div style="clear: both;">&nbsp;</div>
+				<div class="entry">
+					<SPAN
+style='FONT-SIZE: 15px; FONT-FAMILY: Roboto, Arial, "Helvetica Neue", Helvetica, Arial, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: 400; COLOR: rgb(51,51,51); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial'>
+<P><FONT face="Times New Roman"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333">В наши дни каждый
+разработчик может столкнуться с необходимостью работы над мобильным
+или&nbsp;</SPAN></SPAN><SPAN style="FONT-SIZE: 14pt"><A
+title="Python frameworks"
+style="BOX-SIZING: border-box; CURSOR: pointer; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px"
+href="https://python-scripts.com/web-frameworks" target=_blank><SPAN
+style="BACKGROUND: white; COLOR: black">веб-приложением на
+Python</SPAN></A><SPAN style="BACKGROUND: white; COLOR: #333333"><SPAN
+style="WORD-SPACING: 0px; FLOAT: none; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">.
+В Python нет встроенных инструментов для мобильных устройств, тем не менее
+существуют пакеты, которые можно использовать для&nbsp;</SPAN><STRONG
+style="BOX-SIZING: border-box; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">создания
+мобильных приложений</STRONG><SPAN
+style="WORD-SPACING: 0px; FLOAT: none; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">.
+Это Kivy,&nbsp;</SPAN></SPAN><A title="Уроки PyQt5"
+style="BOX-SIZING: border-box; CURSOR: pointer; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px"
+href="https://python-scripts.com/pyqt5" target=_blank><SPAN
+style="BACKGROUND: white; COLOR: black">PyQt</SPAN></A><SPAN
+style="BACKGROUND: white; COLOR: #333333"><SPAN
+style="WORD-SPACING: 0px; FLOAT: none; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">&nbsp;и
+даже библиотека&nbsp;</SPAN></SPAN><A
+style="BOX-SIZING: border-box; CURSOR: pointer; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px"
+href="https://toga.readthedocs.io/en/latest/" target=_blank><SPAN
+style="BACKGROUND: white; COLOR: black">Toga</SPAN></A><SPAN
+style="BACKGROUND: white; COLOR: #333333"><SPAN
+style="WORD-SPACING: 0px; FLOAT: none; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">&nbsp;от
+Beeware.</SPAN></SPAN><O:P></O:P></SPAN></FONT></P><SPAN
+style="WORD-SPACING: 0px; FLOAT: none; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">
+<H2 id=principles-kiwi
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 18.75pt 0cm 7.5pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333"><FONT
+face="Times New Roman">Принципы работы фреймворка Kivy
+Python<O:P></O:P></FONT></SPAN></H2>
+<P
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0cm 0cm 18.75pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333"><FONT
+face="Times New Roman">Kivy был создан в 2011 году. Данный кросс-платформенный
+фреймворк Python работает на Windows, Mac, Linux и Raspberry Pi. В дополнение к
+стандартному вводу через клавиатуру и мышь он поддерживает&nbsp;</FONT><A
+style="BOX-SIZING: border-box; CURSOR: pointer"
+href="https://ru.wikipedia.org/wiki/%D0%9C%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D1%82%D0%B0%D1%87"
+target=_blank><SPAN style="COLOR: black"><FONT
+face="Times New Roman">мультитач</FONT></SPAN></A><FONT face="Times New Roman">.
+Kivy даже поддерживает ускорение GPU своей графики, что во многом является
+следствием использования&nbsp; OpenGL ES2. У проекта есть лицензия MIT, поэтому
+библиотеку можно использовать бесплатно и вкупе с коммерческим программным
+обеспечением. Во время разработки приложения через Kivy создается интуитивно
+понятный интерфейс (</FONT><A style="BOX-SIZING: border-box; CURSOR: pointer"
+href="https://en.wikipedia.org/wiki/Natural_user_interface" target=_blank><SPAN
+style="COLOR: black"><FONT face="Times New Roman">Natural user
+Interface</FONT></SPAN></A><FONT face="Times New Roman">), или&nbsp;<STRONG
+style="BOX-SIZING: border-box">NUI</STRONG>. Его главная идея в том, чтобы
+пользователь мог легко и быстро приспособиться к программному обеспечению без
+чтения инструкций. Kivy не задействует нативные элементы управления, или
+виджеты. Все его виджеты настраиваются. Это значит, что приложения Kivy будут
+выглядеть одинаково на всех платформах. Тем не менее, это также предполагает,
+что внешний вид вашего приложения будет отличаться от нативных приложений
+пользователя. Это может стать как преимуществом, так и недостатком, все зависит
+от аудитории.<O:P></O:P></FONT></SPAN></P>
+<H2 style="BACKGROUND: white; MARGIN: 18.75pt 0cm 7.5pt"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333"><FONT
+face="Times New Roman">Установка Kivy<O:P></O:P></FONT></SPAN></H2>
+<P
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0cm 0cm 18.75pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333"><FONT
+face="Times New Roman">У Kivy есть множество зависимостей, поэтому лучше
+устанавливать его в&nbsp;</FONT><A title="venv python3"
+style="BOX-SIZING: border-box; CURSOR: pointer"
+href="https://python-scripts.com/virtualenv" target=_blank><SPAN
+style="COLOR: black"><FONT face="Times New Roman">виртуальную среду
+Python</FONT></SPAN></A><FONT face="Times New Roman">. Можно использовать
+встроенную библиотеку Python&nbsp;</FONT><A
+style="BOX-SIZING: border-box; CURSOR: pointer"
+href="https://docs.python.org/3/library/venv.html" target=_blank><SPAN
+style="COLOR: black"><FONT face="Times New Roman">venv</FONT></SPAN></A><FONT
+face="Times New Roman">&nbsp;или же пакет&nbsp;</FONT><A
+style="BOX-SIZING: border-box; CURSOR: pointer"
+href="https://virtualenv.pypa.io/en/latest/" target=_blank><SPAN
+style="COLOR: black"><FONT
+face="Times New Roman">virtualenv</FONT></SPAN></A><FONT
+face="Times New Roman">. <O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333"><FONT
+face="Times New Roman">Виртуальная среда Python создается следующим
+образом:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333"><FONT
+face="Times New Roman"><O:P><IMG class=image style="HEIGHT: 91px; WIDTH: 579px"
+alt=screenshot_1.png
+src="user-images/screenshot_1.png"
+width=737 height=63></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><FONT
+face="Times New Roman"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333">По ходу данного
+действия исполняемый файл&nbsp;</SPAN><FONT size=3><FONT color=#000000><STRONG
+style="BOX-SIZING: border-box; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">Python
+3</STRONG><SPAN
+style="WORD-SPACING: 0px; FLOAT: none; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">&nbsp;будет
+скопирован в папку под названием&nbsp;</SPAN></FONT></FONT></FONT><FONT
+size=3><FONT color=#000000><CODE
+style="BOX-SIZING: border-box; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>my_kivy_project</SPAN></CODE><FONT
+face="Times New Roman"><SPAN
+style="WORD-SPACING: 0px; FLOAT: none; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">,
+куда также будут добавлено несколько других
+папок.</SPAN><O:P></O:P></FONT></FONT></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333"><FONT
+face="Times New Roman">Для использования виртуальной среды ее нужно
+активировать. На Mac или Linux это можно сделать, выполнив следующую команду,
+будучи внутри папки&nbsp;</FONT></SPAN><FONT size=3><FONT color=#000000><CODE
+style="BOX-SIZING: border-box; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>my_kivy_project</SPAN></CODE><FONT
+face="Times New Roman"><SPAN
+style="WORD-SPACING: 0px; FLOAT: none; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">:</SPAN><O:P></O:P></SPAN></FONT></FONT></FONT></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333"><FONT
+face="Times New Roman"><O:P><IMG class=image style="HEIGHT: 190px; WIDTH: 585px"
+alt=screenshot_2.png
+src="user-images/screenshot_2.png"
+width=732 height=57></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Команда для
+Windows точно такая же, но активировать скрипт нужно в другом месте — через
+папку&nbsp;</FONT><CODE style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>Scripts</SPAN></CODE><FONT
+face="Times New Roman">, а не&nbsp;</FONT><CODE
+style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>bin</SPAN></CODE><FONT
+face="Times New Roman">. После&nbsp;<STRONG
+style="BOX-SIZING: border-box">активации виртуальной среды</STRONG>&nbsp;Python
+можно запустить&nbsp;</FONT><A title="Установка pip Python 3"
+style="BOX-SIZING: border-box; CURSOR: pointer"
+href="https://python-scripts.com/install-python-windows" target=_blank><SPAN
+style="COLOR: black"><FONT face="Times New Roman">pip</FONT></SPAN></A><FONT
+face="Times New Roman">&nbsp;для установки Kivy. На Linux и Mac нужно выполнить
+следующую команду:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman"><O:P><IMG
+class=image style="HEIGHT: 237px; WIDTH: 588px" alt=screenshot_3.png
+src="user-images/screenshot_3.png"
+width=735 height=59></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333"><FONT
+face="Times New Roman">Инсталляция на Windows несколько сложнее. В официальной
+документации фреймворка изучите пункт, касающийся установки Kivy на Windows.
+Пользователи Mac также могут скачать файл dmg и установить Kivy данным
+образом.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333"><FONT
+face="Times New Roman">В случае возникновения проблем во время установки Kivy на
+вашу платформу изучите дополнительные инструкции, с которыми можно ознакомиться
+с видео ниже по списку <O:P></O:P></FONT></SPAN></P><IFRAME
+title="YouTube video player" height=315
+src="https://www.youtube.com/embed/TeXF_n_hNgE" frameBorder=0 width=560
+allowfullscreen
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></IFRAME>
+<P style="BACKGROUND: white; MARGIN: 6pt 0cm"><SPAN
+style="FONT-SIZE: 14pt"><O:P><FONT color=#000000
+face="Times New Roman"></FONT></O:P></SPAN></P></SPAN>
+<H2 style="BACKGROUND: white; MARGIN: 18.75pt 0cm 7.5pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Работа с
+виджетами в Kivy<O:P></O:P></FONT></SPAN></H2>
+<P
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0cm 0cm 18.75pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><FONT
+face="Times New Roman"><STRONG style="BOX-SIZING: border-box"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333">Виджеты</SPAN></STRONG><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333">&nbsp;— это отображаемые на экране
+элементы управления, которыми пользователь может оперировать. Любой
+инструментарий графического интерфейса пользователя поставляется с набором
+виджетов. Типичными представителями виджетов, что вы не раз использовали,
+являются кнопки, выпадающие списки и вкладки. Внутри фреймворка Kivy встроено
+много виджетов.<O:P></O:P></SPAN></FONT></P>
+<H2 style="BACKGROUND: white; MARGIN: 18.75pt 0cm 7.5pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Запуск
+программы «Hello, Kivy!»<O:P></O:P></FONT></SPAN></H2>
+<P
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0cm 0cm 18.75pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Принцип
+работы Kivy можно уловить, взглянув на следующее приложение «Hello,
+World!»:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 6pt 0cm"><SPAN
+style="FONT-SIZE: 14pt"><FONT color=#000000><FONT
+face="Times New Roman"><O:P><IMG class=image style="HEIGHT: 312px; WIDTH: 561px"
+alt=screenshot_4.png
+src="user-images/screenshot_4.png"
+width=733 height=312></O:P></FONT></FONT></SPAN></P>
+<P class=MsoNormal
+style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt; LINE-HEIGHT: normal"><SPAN
+style='FONT-SIZE: 14pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #333333; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: RU'>Каждому
+приложению Kivy требуется создать подкласс&nbsp;App&nbsp;и переопределить
+метод&nbsp;build().&nbsp; Сюда вы помещаете код UI или вызываете другие&nbsp;<A
+title="создание функции python"
+href="https://python-scripts.com/functions-python" target=_blank><SPAN
+style="COLOR: black">функции</SPAN></A>, которые определяют код UI. В данном
+случае создается виджет&nbsp;Label&nbsp;и
+передается&nbsp;text,&nbsp;size_hint&nbsp;и&nbsp;pos_hint. Последние два
+аргумента не обязательны.<O:P></O:P></SPAN></P>
+<P class=MsoNormal
+style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt; LINE-HEIGHT: normal"><SPAN
+style='FONT-SIZE: 14pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #333333; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: RU'>size_hint&nbsp;говорит
+Kivy о размерах что нужно использовать при создании виджета. Используются два
+числа:<O:P></O:P></SPAN></P>
+<P class=MsoNormal
+style="BACKGROUND: white; MARGIN: 6pt 0cm 6pt 12pt; LINE-HEIGHT: normal; TEXT-INDENT: -18pt; mso-list: l1 level1 lfo1; tab-stops: list 36.0pt"><SPAN
+style='FONT-SIZE: 14pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #333333; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: RU'><SPAN
+style="mso-list: Ignore">1.<SPAN
+style='FONT: 7pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</SPAN></SPAN></SPAN><SPAN
+style='FONT-SIZE: 14pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #333333; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: RU'>Первое
+число&nbsp;x&nbsp;указывает на размер&nbsp;<B>ширины</B>&nbsp;элемента
+управления.<O:P></O:P></SPAN></P>
+<P class=MsoNormal
+style="BACKGROUND: white; MARGIN: 6pt 0cm 6pt 12pt; LINE-HEIGHT: normal; TEXT-INDENT: -18pt; mso-list: l1 level1 lfo1; tab-stops: list 36.0pt"><SPAN
+style='FONT-SIZE: 14pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #333333; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: RU'><SPAN
+style="mso-list: Ignore">2.<SPAN
+style='FONT: 7pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</SPAN></SPAN></SPAN><SPAN
+style='FONT-SIZE: 14pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #333333; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: RU'>Второе
+число&nbsp;y&nbsp;указывает на размер&nbsp;<B>высоты</B>&nbsp;элемента
+управления.<O:P></O:P></SPAN></P>
+<P class=MsoNormal
+style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt; LINE-HEIGHT: normal"><SPAN
+style='FONT-SIZE: 14pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #333333; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: RU'>Значение
+обоих чисел должно быть в промежутке между&nbsp;0&nbsp;и&nbsp;1. Значение по
+обоих показателей по умолчанию равно&nbsp;1. Также можно
+задействовать&nbsp;pos_hint, что используется для позиционирования виджета. В
+коде, размещенном выше, указывается, что виджет должен быть размещен в центре
+осей&nbsp;x&nbsp;и&nbsp;y.<O:P></O:P></SPAN></P>
+<P class=MsoNormal
+style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt; LINE-HEIGHT: normal"><SPAN
+style='FONT-SIZE: 14pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #333333; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: RU'>Для
+запуска приложения нужно инициализировать&nbsp;<A
+title="создание класса в python" href="https://python-scripts.com/python-class"
+target=_blank><SPAN style="COLOR: black">класс</SPAN></A>&nbsp;MainApp&nbsp;и
+вызвать метод&nbsp;run(). После этих действий на экране появится
+следующее:<O:P></O:P></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 6pt 0cm"><SPAN
+style="FONT-SIZE: 14pt"><FONT color=#000000><FONT
+face="Times New Roman"><O:P><IMG class=image style="HEIGHT: 400px; WIDTH: 581px"
+alt=screenshot_5.png
+src="user-images/screenshot_5.png"
+width=712 height=561></O:P></FONT></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 6pt 0cm"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333"><FONT
+face="Times New Roman">Kivy также выводит в&nbsp;</FONT></SPAN><FONT
+size=3><FONT color=#000000><CODE
+style="BOX-SIZING: border-box; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>stdout</SPAN></CODE><FONT
+face="Times New Roman"><SPAN
+style="WORD-SPACING: 0px; FLOAT: none; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">&nbsp;довольно
+много текста:</SPAN><O:P></O:P></SPAN></FONT></FONT></FONT></P>
+<P style="BACKGROUND: white; MARGIN: 6pt 0cm"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333"><FONT
+face="Times New Roman"><O:P><IMG class=image style="HEIGHT: 501px; WIDTH: 576px"
+alt=screenshot_6.png
+src="user-images/screenshot_6.png"
+width=733 height=501></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Это может
+быть полезно для&nbsp;</FONT><A title="логирование в python "
+style="BOX-SIZING: border-box; CURSOR: pointer"
+href="https://python-scripts.com/logging-python" target=_blank><SPAN
+style="COLOR: black"><FONT face="Times New Roman">отладки
+приложения</FONT></SPAN></A><FONT
+face="Times New Roman">.<O:P></O:P></FONT></SPAN></P>
+<P
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0cm 0cm 18.75pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Далее
+добавим виджет&nbsp;</FONT><CODE style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>Image</SPAN></CODE><FONT
+face="Times New Roman">&nbsp;и посмотрим, чем он отличается от&nbsp;</FONT><CODE
+style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>Label</SPAN></CODE><FONT
+face="Times New Roman">.<O:P></O:P></FONT></SPAN></P>
+<H2 id=show-vid
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 18.75pt 0cm 7.5pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Отображение
+виджета Image в Kivy Python<O:P></O:P></FONT></SPAN></H2>
+<P
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0cm 0cm 18.75pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">В Kivy есть
+несколько видов виджетов, связанных с изображениями. Для загрузки картинок с
+жесткого диска можно задействовать&nbsp;</FONT><CODE
+style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>Image</SPAN></CODE><FONT
+face="Times New Roman">, а при использовании адреса URL
+подойдет&nbsp;</FONT><CODE style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>AsyncImage</SPAN></CODE><FONT
+face="Times New Roman">. К следующем примере берется&nbsp;<STRONG
+style="BOX-SIZING: border-box">стандартный класс</STRONG>&nbsp;</FONT><CODE
+style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>Image</SPAN></CODE><FONT
+face="Times New Roman">:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman"><O:P><IMG
+class=image style="HEIGHT: 126px; WIDTH: 453px" alt=screenshot_7.png
+src="user-images/screenshot_7.png"
+width=730 height=316></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">В данном
+коде импортируется&nbsp;</FONT><CODE style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>Image</SPAN></CODE><FONT
+face="Times New Roman">&nbsp;из подпакета&nbsp;</FONT><CODE
+style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>kivy.uix.image</SPAN></CODE><FONT
+face="Times New Roman">. Класс&nbsp;</FONT><CODE
+style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>Image</SPAN></CODE><FONT
+face="Times New Roman">&nbsp;принимает много разных параметров, однако
+единственным для нас нужным является&nbsp;</FONT><CODE
+style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>source</SPAN></CODE><FONT
+face="Times New Roman">, что указывает Kivy, какое изображение должно быть
+загружено. Здесь передается полный путь к выбранному изображению. Оставшаяся
+часть кода такая же, как и в прошлом примере.<O:P></O:P></FONT></SPAN></P>
+<P
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0cm 0cm 18.75pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">После
+запуска кода должно выводиться нечто подобное:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman"><O:P><IMG
+class=image style="HEIGHT: 567px; WIDTH: 581px" alt=screenshot_8.png
+src="user-images/screenshot_8.png"
+width=730 height=567></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Текст из
+предыдущего примера был заменен картинкой.<O:P></O:P></FONT></SPAN></P>
+<P
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0cm 0cm 18.75pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Теперь
+рассмотрим, как добавить и оптимально расположить несколько виджетов в
+приложении.<O:P></O:P></FONT></SPAN></P>
+<H2 id=layout-kivy
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 18.75pt 0cm 7.5pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Разметка
+(Layout) в UI Kivy<O:P></O:P></FONT></SPAN></H2>
+<P
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0cm 0cm 18.75pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">У каждого
+фреймворка есть свой собственный метод для размещения виджетов. К примеру,
+в&nbsp;</FONT><A title="создание GUI приложений на Python"
+style="BOX-SIZING: border-box; CURSOR: pointer"
+href="https://python-scripts.com/wxpython" target=_blank><SPAN
+style="COLOR: black"><FONT
+face="Times New Roman">wxPython</FONT></SPAN></A><FONT
+face="Times New Roman">&nbsp;используются классификаторы, а в&nbsp;</FONT><A
+title="уроки по изучению tkinter"
+style="BOX-SIZING: border-box; CURSOR: pointer"
+href="https://python-scripts.com/tkinter-introduction" target=_blank><SPAN
+style="COLOR: black"><FONT face="Times New Roman">Tkinter</FONT></SPAN></A><FONT
+face="Times New Roman">&nbsp;будет задействован лейаут, или менеджер геометрии.
+В Kivy за это отвечают&nbsp;<STRONG style="BOX-SIZING: border-box">Лейауты
+(Layouts)</STRONG>. Доступно несколько различных типов Лейаутов. Чаще всего
+используются следующие виды:<O:P></O:P></FONT></SPAN></P>
+<P class=MsoNormal
+style="BACKGROUND: white; MARGIN: 6pt 0cm 6pt 12pt; LINE-HEIGHT: normal; TEXT-INDENT: -18pt; mso-list: l0 level1 lfo2; tab-stops: list 36.0pt"><SPAN
+style="FONT-SIZE: 10pt; FONT-FAMILY: Symbol; COLOR: #333333; mso-fareast-font-family: Symbol; mso-bidi-font-size: 14.0pt; mso-bidi-font-family: Symbol"><SPAN
+style="mso-list: Ignore">·<SPAN
+style='FONT: 7pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</SPAN></SPAN></SPAN><SPAN
+style='FONT-SIZE: 14pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #333333'>BoxLayout;<O:P></O:P></SPAN></P>
+<P class=MsoNormal
+style="BACKGROUND: white; MARGIN: 6pt 0cm 6pt 12pt; LINE-HEIGHT: normal; TEXT-INDENT: -18pt; mso-list: l0 level1 lfo2; tab-stops: list 36.0pt"><SPAN
+style="FONT-SIZE: 10pt; FONT-FAMILY: Symbol; COLOR: #333333; mso-fareast-font-family: Symbol; mso-bidi-font-size: 14.0pt; mso-bidi-font-family: Symbol"><SPAN
+style="mso-list: Ignore">·<SPAN
+style='FONT: 7pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</SPAN></SPAN></SPAN><SPAN
+style='FONT-SIZE: 14pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #333333'>FloatLayout;<O:P></O:P></SPAN></P>
+<P class=MsoNormal
+style="BACKGROUND: white; MARGIN: 6pt 0cm 6pt 12pt; LINE-HEIGHT: normal; TEXT-INDENT: -18pt; mso-list: l0 level1 lfo2; tab-stops: list 36.0pt"><SPAN
+style="FONT-SIZE: 10pt; FONT-FAMILY: Symbol; COLOR: #333333; mso-fareast-font-family: Symbol; mso-bidi-font-size: 14.0pt; mso-bidi-font-family: Symbol"><SPAN
+style="mso-list: Ignore">·<SPAN
+style='FONT: 7pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</SPAN></SPAN></SPAN><SPAN
+style='FONT-SIZE: 14pt; FONT-FAMILY: "Times New Roman",serif; COLOR: #333333'>GridLayout.<O:P></O:P></SPAN></P>
+<P
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0cm 0cm 18.75pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Найти
+полный список доступных Лейаутов можно в&nbsp;</FONT><A
+style="BOX-SIZING: border-box; CURSOR: pointer"
+href="https://kivy.org/doc/stable/api-kivy.uix.layout.html" target=_blank><SPAN
+style="COLOR: black"><FONT face="Times New Roman">документации
+Kivy</FONT></SPAN></A><FONT face="Times New Roman">. Рабочий исходный код можно
+найти в&nbsp;</FONT><CODE style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>kivy.uix</SPAN></CODE><FONT
+face="Times New Roman">.<O:P></O:P></FONT></SPAN></P>
+<P
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0cm 0cm 18.75pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Рассмотрим&nbsp;</FONT><CODE
+style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>BoxLayout</SPAN></CODE><FONT
+face="Times New Roman">&nbsp;на примере следующего
+кода:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman"><O:P><IMG
+class=image style="HEIGHT: 393px; WIDTH: 563px" alt=screenshot_9.png
+src="user-images/screenshot_9.png"
+width=733 height=592></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><O:P><FONT
+face="Times New Roman"></FONT></O:P></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Здесь
+из&nbsp;</FONT><CODE style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>kivy.uix.boxlayout</SPAN></CODE><FONT
+face="Times New Roman">&nbsp;</FONT><A title="python import module"
+style="BOX-SIZING: border-box; CURSOR: pointer"
+href="https://python-scripts.com/import-modules-python" target=_blank><SPAN
+style="COLOR: black"><FONT face="Times New Roman">импортируется
+модуль</FONT></SPAN></A><FONT face="Times New Roman">&nbsp;</FONT><CODE
+style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>BoxLayout</SPAN></CODE><FONT
+face="Times New Roman">&nbsp;и затем устанавливается. После этого создается
+список цветов, которые представляют собой цвета&nbsp;</FONT><A
+style="BOX-SIZING: border-box; CURSOR: pointer"
+href="https://ru.wikipedia.org/wiki/RGB" target=_blank><SPAN
+style="COLOR: black"><FONT face="Times New Roman">RGB
+(Red-Blue-Green)</FONT></SPAN></A><FONT
+face="Times New Roman">.<O:P></O:P></FONT></SPAN></P>
+<P
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0cm 0cm 18.75pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">В конечном
+итоге формируется цикл для&nbsp;</FONT><A title="модуль range Python"
+style="BOX-SIZING: border-box; CURSOR: pointer"
+href="https://python-scripts.com/range" target=_blank><SPAN
+style="COLOR: black"><FONT face="Times New Roman">range</FONT></SPAN></A><FONT
+face="Times New Roman">&nbsp;из 5, результатом чего является
+кнопка&nbsp;</FONT><CODE style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>btn</SPAN></CODE><FONT
+face="Times New Roman">&nbsp;для каждой итерации. Сделаем вещи немного
+интереснее и поставим в качестве фона кнопки&nbsp;</FONT><CODE
+style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>background_color</SPAN></CODE><FONT
+face="Times New Roman">&nbsp;случайный цвет. Теперь можно добавить кнопку в
+лейаут при помощи&nbsp;</FONT><CODE style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>layout.add_widget(btn)</SPAN></CODE><FONT
+face="Times New Roman">.<O:P></O:P></FONT></SPAN></P>
+<P
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0cm 0cm 18.75pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">После
+запуска кода выведется нечто подобное:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman"><IMG
+class=image style="HEIGHT: 563px; WIDTH: 559px" alt=screenshot_10.png
+src="user-images/screenshot_10.png"
+width=729 height=563></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Здесь представлены 5 кнопок, окрашенных случайным
+образом, по одной для каждой итерации цикла for.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><O:P><FONT
+face="Times New Roman"></FONT></O:P></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Во время создания лейаута следует учитывать следующие
+аргументы:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><O:P><FONT
+face="Times New Roman"></FONT></O:P></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">padding: Отступ padding между лейаутом и его дочерними
+элементами уточняется в пикселях. Для этого можно выбрать один из трех
+способов:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><FONT face="Times New Roman"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333">Список</SPAN><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333; mso-ansi-language: EN-US"> </SPAN><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333">из</SPAN><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333; mso-ansi-language: EN-US"> </SPAN><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333">четырех</SPAN><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333; mso-ansi-language: EN-US"> </SPAN><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333">аргументов</SPAN><SPAN lang=EN-US
+style="FONT-SIZE: 14pt; COLOR: #333333; mso-ansi-language: EN-US">:
+[padding_left, padding_top, padding_right,
+padding_bottom]<O:P></O:P></SPAN></FONT></P>
+<P style="BACKGROUND: white"><FONT face="Times New Roman"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333">Список</SPAN><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333; mso-ansi-language: EN-US"> </SPAN><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333">из</SPAN><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333; mso-ansi-language: EN-US"> </SPAN><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333">двух</SPAN><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333; mso-ansi-language: EN-US"> </SPAN><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333">аргументов</SPAN><SPAN lang=EN-US
+style="FONT-SIZE: 14pt; COLOR: #333333; mso-ansi-language: EN-US">:
+[padding_horizontal, padding_vertical]<O:P></O:P></SPAN></FONT></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Один аргумент: padding=10<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">spacing: При помощи данного аргумента добавляется
+расстояние между дочерними виджетами.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">orientation: Позволяет изменить значение orientation для
+BoxLayout по умолчанию — с горизонтального на
+вертикальное.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Добавление событий в Kivy<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Как и многие другие инструментарии GUI, по большей части
+Kivy полагается на события. Фреймворк отзывается на нажатие клавиш, кнопки мышки
+или прикосновение к сенсорному экрану. В Kivy задействован концепт Часов
+(Clock), что дает возможность создать своего рода график для вызова определенных
+функций в будущем. В Kivy также используется концепт Свойств (Properties), что
+работает с EventDispatcher. Свойства помогают осуществить проверку
+достоверности. Они также запускают события, когда виджет меняет размер или
+позицию.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Добавим
+событие для кнопки из предыдущего кода:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman"><O:P><IMG
+class=image style="HEIGHT: 736px; WIDTH: 554px" alt=screenshot_11.png
+src="user-images/screenshot_11.png"
+width=735 height=395></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">В данном
+коде вызывается&nbsp;</FONT><CODE style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>button.bind()</SPAN></CODE><FONT
+face="Times New Roman">, а событие&nbsp;</FONT><CODE
+style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>on_press</SPAN></CODE><FONT
+face="Times New Roman">&nbsp;ссылается на&nbsp;</FONT><CODE
+style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>MainApp.on_press_button()</SPAN></CODE><FONT
+face="Times New Roman">.<O:P></O:P></FONT></SPAN></P>
+<P
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0cm 0cm 18.75pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Этот метод
+неявно принимает экземпляр виджета, который является самим объектом кнопки.
+Сообщение будет выводиться на&nbsp;</FONT><CODE
+style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>stdout</SPAN></CODE><FONT
+face="Times New Roman">&nbsp;всякий раз при нажатии пользователем на
+кнопку.<O:P></O:P></FONT></SPAN></P>
+<H2 id=lang-kv
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 18.75pt 0cm 7.5pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Использование языка дизайна
+KV<O:P></O:P></FONT></SPAN></H2>
+<P
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0cm 0cm 18.75pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Kivy
+предоставляет язык дизайна&nbsp;<STRONG
+style="BOX-SIZING: border-box">KV</STRONG>, что можно использовать в приложениях
+Kivy. Язык KV позволяет отделить дизайн интерфейса от логики приложения. Он
+придерживается принципа&nbsp;</FONT><A
+style="BOX-SIZING: border-box; CURSOR: pointer"
+href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8"
+target=_blank><SPAN style="COLOR: black"><FONT face="Times New Roman">разделения
+ответственности</FONT></SPAN></A><FONT face="Times New Roman">&nbsp;и является
+частью архитектурного паттерна&nbsp;</FONT><A
+style="BOX-SIZING: border-box; CURSOR: pointer"
+href="https://ru.wikipedia.org/wiki/Model-View-Controller" target=_blank><SPAN
+style="COLOR: black"><FONT
+face="Times New Roman">Модель-Представление-Контроллер
+(Model-View-Controller)</FONT></SPAN></A><FONT face="Times New Roman">.&nbsp;
+Предыдущий пример можно обновить, используя язык
+KV:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman"><O:P><IMG
+class=image style="HEIGHT: 566px; WIDTH: 553px" alt=screenshot_12.png
+src="user-images/screenshot_12.png"
+width=730 height=293></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">С первого
+взгляда данный код может показаться несколько странным, так как
+кнопка&nbsp;</FONT><CODE style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>Button</SPAN></CODE><FONT
+face="Times New Roman">&nbsp;создается без указания атрибутов или привязывания к
+ним событий. Здесь Kivy автоматически ищет файл с таким же названием, что и у
+класса, только строчными буквами и без части&nbsp;</FONT><CODE
+style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>App</SPAN></CODE><FONT
+face="Times New Roman">&nbsp;в названии класса.<O:P></O:P></FONT></SPAN></P>
+<P
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0cm 0cm 18.75pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">В данном
+случае названием класса является&nbsp;</FONT><CODE
+style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>ButtonApp</SPAN></CODE><FONT
+face="Times New Roman">, поэтому Kivy будет искать файл&nbsp;</FONT><CODE
+style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>button.kv</SPAN></CODE><FONT
+face="Times New Roman">. Если такой&nbsp;</FONT><A
+title="python проверить существует ли файл"
+style="BOX-SIZING: border-box; CURSOR: pointer"
+href="https://python-scripts.com/file-exists" target=_blank><SPAN
+style="COLOR: black"><FONT face="Times New Roman">файл
+существует</FONT></SPAN></A><FONT face="Times New Roman">, и он также
+форматирован должным образом, тогда Kivy использует его при загрузке UI.
+Попробуйте&nbsp;</FONT><A title="создание файла в Python"
+style="BOX-SIZING: border-box; CURSOR: pointer"
+href="https://python-scripts.com/work-with-files-python" target=_blank><SPAN
+style="COLOR: black"><FONT face="Times New Roman">создать такой
+файл</FONT></SPAN></A><FONT face="Times New Roman">&nbsp;и добавить следующий
+код:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman"><IMG
+class=image style="HEIGHT: 137px; WIDTH: 566px" alt=screenshot_13.png
+src="user-images/screenshot_13.png"
+width=731 height=137></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Действия каждой строки:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><O:P><FONT
+face="Times New Roman"></FONT></O:P></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Строка 1 соответствует вызову Button в коде Python. Kivy
+должен осмотреть инициализированный объект для определения
+кнопки;<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Строка 2 устанавливает text
+кнопки;<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Строка 3 устанавливает ширину и высоту при помощи
+size_hint;<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Строка 4 устанавливает позицию кнопки через
+pos_hint;<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Строка 5 устанавливает обработчик событий on_press. Для
+указания Kivy места обработчика событий используется app.on_press_button().
+Здесь Kivy будет искать метод .on_press_button() в классе
+Application.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Вы можете установить все ваши виджеты и лейауты внутри
+одного или нескольких файлов языка KV. Язык KV также поддерживает импорт модулей
+Python в KV, создавая динамичные классы, и это далеко не предел. Ознакомиться с
+полным перечнем его возможностей можно в гиде Kivy по языку
+KV.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><O:P><FONT
+face="Times New Roman"></FONT></O:P></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Теперь мы можем приступить к созданию настоящего рабочего
+приложения.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><O:P><FONT
+face="Times New Roman"></FONT></O:P></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Создание приложения Kivy
+Python<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Создание чего-то полезное несомненно является отличным
+способом выучить новый навык. Учитывая данное утверждение, давайте используем
+Kivy при создании калькулятора, который будет поддерживать следующие
+операции:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><O:P><FONT
+face="Times New Roman"></FONT></O:P></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Сложение;<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Вычитание;<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Умножение;<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Деление.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">В данном приложении будет использован набор кнопок в
+своего рода лейауте. В верхней части также будет специальный блок для вывода
+операций и их результатов. В итоге калькулятор будет выглядеть следующим
+образом:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman"><IMG
+class=image style="HEIGHT: 746px; WIDTH: 542px" alt=screenshot_14.png
+src="user-images/screenshot_14.png"
+width=751 height=746></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><FONT
+face="Times New Roman"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333">Теперь, когда у нас
+есть в наличии целевой UI, может составить
+код:</SPAN><O:P></O:P></SPAN></FONT></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333"><FONT
+face="Times New Roman"><IMG class=image style="HEIGHT: 812px; WIDTH: 530px"
+alt=screenshot_15.png
+src="user-images/screenshot_15.png"
+width=728 height=812></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Калькулятор работает следующим
+образом:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><O:P><FONT
+face="Times New Roman"></FONT></O:P></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">В строках с 8 по 10 создается список operators и
+несколько полезных значений, last_was_operator и last_button, которые будут
+использованы чуть позже.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">В строках с 11 по 15 создается лейаут верхнего уровня
+main_layout, к нему также добавляется виджет только для чтения
+TextInput.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">В строках с 16 по 21 создается вложенный список из
+списков, где есть большая часть кнопок для
+калькулятора.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">В строке 22 начинается цикл for для кнопок. Для каждого
+вложенного списка делается следующее:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">В строке 23 создается BoxLayout с горизонтальной
+ориентацией.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">В строке 24 начинается еще один цикл for для элементов
+вложенного списка.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">В строках с 25 по 39 создаются кнопки для ряда и
+связываются обработчиком событий, после чего кнопки добавляются к
+горизонтальному BoxLayout из строки 23.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">В строке 31 этот лейаут добавляется к
+main_layout.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">В строках с 33 по 37 создается кнопка равно (=) и
+привязывается к обработчику событий, после чего она добавляется к
+main_layout.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Далее
+создается обработчик событий .on_button_press(). Код будет выглядеть следующим
+образом:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman"><IMG
+class=image style="HEIGHT: 579px; WIDTH: 542px" alt=screenshot_16.png
+src="user-images/screenshot_16.png"
+width=731 height=433></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Почти все виджеты приложения вызывают .on_button_press().
+Это работает следующим образом:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><O:P><FONT
+face="Times New Roman"></FONT></O:P></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Строка 41 принимает аргумент instance, в результате чего
+можно узнать, какой виджет вызвал функцию.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Строки между 42 и 43 извлекают и хранят значения solution
+и text кнопки.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Строки c 45 по 47 проверяют, на какую кнопку нажали. Если
+пользователь нажимает с, тогда очищается solution. В противном случае
+используется утверждение else.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Строка 49 проверяет, было ли у решения предыдущее
+значение.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Строки с 50 по 52 проверяют, была ли последняя нажатая
+кнопка оператором. Если да, тогда solution обновляться не будет. Это необходимо
+для предотвращения создания двух операций в одном ряду. К примеру, 1 * / будет
+недействительным утверждением.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Строки с 53 по 55 проверяют, является ли первый символ
+оператором. Если да, тогда solution обновляться не будет, так как первое
+значение не может быть значением оператора.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Строки с 56 по 58 переходят к условию else. Если никакое
+из предыдущих значений не найдено, тогда обновляется
+solution.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Строка 59 устанавливает last_button к метке последней
+нажатой кнопки.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Строка 60 устанавливает last_was_operator к значению True
+или False в зависимости от того, был символ оператором или
+нет.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Последней
+частью кода будет .on_solution():<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman"><IMG
+class=image style="HEIGHT: 348px; WIDTH: 563px" alt=screenshot_17.png
+src="user-images/screenshot_17.png"
+width=731 height=132></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">При запуске
+данного кода на рабочем столе компьютера приложение будет выглядеть следующим
+образом:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman"><IMG
+class=image style="HEIGHT: 532px; WIDTH: 557px" alt=screenshot_18.png
+src="user-images/screenshot_18.png"
+width=728 height=532></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><FONT
+face="Times New Roman"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333">Полный текст кода
+примера калькулятора представлен ниже:</SPAN><O:P></O:P></SPAN></FONT></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333"><FONT
+face="Times New Roman"><IMG class=image style="HEIGHT: 411px; WIDTH: 551px"
+alt=screenshot_19.png
+src="user-images/screenshot_19.png"
+width=733 height=734></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Пришло
+время разместить приложение в&nbsp;<STRONG style="BOX-SIZING: border-box">Google
+Play</STRONG>&nbsp;или в&nbsp;<STRONG
+style="BOX-SIZING: border-box">AppStore</STRONG>!<O:P></O:P></FONT></SPAN></P>
+<H2 id=apk-andr
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 18.75pt 0cm 7.5pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Создаем apk
+приложения для Android на Python<O:P></O:P></FONT></SPAN></H2>
+<P
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0cm 0cm 18.75pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">По
+завершении составления кода вы можете поделиться своим приложением с другими.
+Хорошим способом сделать это может стать превращение вашего кода в приложения
+для смартфона на Android. Для этого вначале нужно установить
+пакет&nbsp;</FONT><CODE style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>buildozer</SPAN></CODE><FONT
+face="Times New Roman">&nbsp;через&nbsp;</FONT><CODE
+style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>pip</SPAN></CODE><FONT
+face="Times New Roman">:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman"><IMG
+class=image style="HEIGHT: 327px; WIDTH: 561px" alt=screenshot_21.png
+src="user-images/screenshot_21.png"
+width=732 height=53></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Затем
+создается новая папка, после чего нужно перейти в нее через терминал. Затем
+выполняется следующая команда:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman"><IMG
+class=image style="HEIGHT: 386px; WIDTH: 553px" alt=screenshot_22.png
+src="user-images/screenshot_22.png"
+width=732 height=55></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333"><FONT
+face="Times New Roman">После этого создается файл&nbsp;</FONT></SPAN><FONT
+size=3><FONT color=#000000><CODE
+style="BOX-SIZING: border-box; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'><CODE><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: black; LINE-HEIGHT: 107%; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin'>ozer.spec</SPAN></CODE><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; BACKGROUND: white; COLOR: black; LINE-HEIGHT: 107%'><SPAN
+style="WORD-SPACING: 0px; FLOAT: none; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">,
+который будет использован для&nbsp;</SPAN><STRONG
+style="BOX-SIZING: border-box; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">конфигурации
+сборки</STRONG><SPAN
+style="WORD-SPACING: 0px; FLOAT: none; ORPHANS: 2; WIDOWS: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">.
+К примеру, первые две строчки файла спецификации можно редактировать следующим
+образом:</SPAN></SPAN><SPAN
+style='FONT-SIZE: 16pt; FONT-FAMILY: "Times New Roman",serif; LINE-HEIGHT: 107%'><O:P></O:P></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"></SPAN></CODE><FONT
+face="Times New Roman"></SPAN></FONT></FONT></FONT></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; BACKGROUND: white; COLOR: #333333"><FONT
+face="Times New Roman"><IMG class=image style="HEIGHT: 235px; WIDTH: 543px"
+alt=screenshot_23.png
+src="user-images/screenshot_23.png"
+width=729 height=235></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">Не бойтесь посмотреть оставшуюся часть файла для
+выяснения того, что еще можно поменять.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">На данный момент приложение почти готово к сборке, однако
+для начала нужно установить зависимости для buildozer.<SPAN
+style="mso-spacerun: yes">&nbsp; </SPAN>После их установки скопируйте ваше
+приложение калькулятора в новую папку и переименуйте его в main.py. Этого
+требует buildozer. Если файл будет назван неверно, тогда процесс сборки
+завершится неудачей.<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Теперь
+можно запустить следующую команду:<O:P></O:P></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 6pt 0cm"><SPAN
+style="FONT-SIZE: 14pt"><FONT color=#000000><FONT face="Times New Roman"><IMG
+class=image style="HEIGHT: 54px; WIDTH: 540px" alt=screenshot_24.png
+src="user-images/screenshot_24.png"
+width=735 height=54></FONT></FONT></SPAN></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Этап сборки
+займет время! На моем компьютере на это ушло около 15-20 минут. Здесь все
+зависит от вашего железа, так что времени может потребоваться еще больше.
+Расслабьтесь, налейте чашечку кофе или прогуляйтесь.&nbsp;</FONT><CODE
+style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>Buildozer</SPAN></CODE><FONT
+face="Times New Roman">&nbsp;скачает те элементы&nbsp;<STRONG
+style="BOX-SIZING: border-box">Android SDK</STRONG>, которые нужны для процесса
+сборки. Если все идет по плану, тогда в папке&nbsp;</FONT><CODE
+style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>bin</SPAN></CODE><FONT
+face="Times New Roman">&nbsp;появится файл под названием, напоминающим что-то
+вроде&nbsp;</FONT><CODE style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>kvcalc-0.1-debug.apk</SPAN></CODE><FONT
+face="Times New Roman">.<O:P></O:P></FONT></SPAN></P>
+<P
+style="BOX-SIZING: border-box; BACKGROUND: white; WORD-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0cm 0cm 18.75pt; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"><FONT face="Times New Roman">Далее
+требуется связать телефон Android с компьютером и перенести туда
+файл&nbsp;</FONT><CODE style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>apk</SPAN></CODE><FONT
+face="Times New Roman">. Затем откройте менеджер файлов телефона и кликните на
+файл&nbsp;</FONT><CODE style="BOX-SIZING: border-box"><SPAN
+style='FONT-FAMILY: "Times New Roman",serif; mso-ansi-font-size: 14.0pt; mso-bidi-font-size: 14.0pt'>apk</SPAN></CODE><FONT
+face="Times New Roman">. Android должен спросить, хотите ли вы установить
+приложение. Есть вероятность появления предупреждения, ведь приложение было
+скачано не из&nbsp;<STRONG style="BOX-SIZING: border-box">Google Play</STRONG>.
+Тем не менее, вы по-прежнему сможете установить его. Вот как выглядит
+калькулятор, запущенный на </FONT></SPAN><FONT face="Times New Roman"><SPAN
+lang=EN-US
+style="FONT-SIZE: 14pt; COLOR: #333333; mso-ansi-language: EN-US">Honor</SPAN><SPAN
+style="FONT-SIZE: 14pt; COLOR: #333333"> 9:<O:P></O:P></SPAN></FONT></P>
+<P style="BACKGROUND: white; MARGIN: 0cm 0cm 18.75pt"><SPAN lang=EN-US
+style="FONT-SIZE: 14pt; COLOR: #333333; mso-ansi-language: EN-US"><FONT
+face="Times New Roman"><IMG class=image alt=screenshot_25.png
+src="user-images/screenshot_25.png"></FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333"><FONT
+face="Times New Roman">У buildozer также есть несколько других команд, которые
+вы можете использовать. Изучите документацию, чтобы подробнее узнать об этом.
+При необходимости добиться более детального управления упаковку можно
+осуществить через python-for-android. Здесь это обсуждаться не будет, но если
+интересно, ознакомьтесь, как еще можно быстро начать проект.</FONT></SPAN></P>
+<P style="BACKGROUND: white"><SPAN style="FONT-SIZE: 14pt; COLOR: #333333">Если
+хотите больше ознакомиться с "kivy python" то справо будут видеоуроки
+<O:P></O:P></SPAN></P>
+<P>&nbsp;</P></SPAN>
+
+				</div>
+			</div>
+		<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+		<div id="sidebar">
+			<ul>
+
+				<li>
+					<h2></h2>
+					<ul>
+						<li><a style="" href="index.html">Мобильное приложение</a></li>
+<li><a style="" href="page3.html">Подсказка для скачивания «Android Studio»</a></li>
+<li class="active"><a style="" href="page4.html">Создание мобильного приложения на "Python"</a></li>
+<li><a style="" href="page5.html">Видеоуроки по "kivy python"</a></li>
+<li><a style="" href="page6.html">Создание мобильного прложения на "Java"</a></li>
+<li><a style="" href="page7.html">Видеоуроки по "Java"</a></li>
+<li><a style="" href="page10.html">Тест на знание "Java"</a></li>
+<li><a style="" href="page11.html">Тест на знание "Python"</a></li>
+
+					</ul>
+				</li>
+
+			</ul>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+	</div>
+	<!-- end #page -->
+</div>
+<div id="footer">
+	<p> | <a href="https://nggtk.ru">Сайт ГАПОУ НГТК</a> | <a href="https://vk.com/gapou_ngtk">НГТК в Вк</a></p>
+<p><a href="#top"> Наверх </a> </p>
+</div>
+
+</body>
+</html>
